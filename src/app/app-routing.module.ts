@@ -16,8 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'layout', 
-    component: LayoutComponent, 
-    pathMatch: 'full'
+    loadChildren: () => import('./shared/shared.module').then(m => m.SharedModule)   
   },
   {
     path: '**', //ruta que no exista

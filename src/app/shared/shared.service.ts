@@ -22,5 +22,16 @@ export class SharedService {
     localStorage.setItem("userSession", JSON.stringify(session));
   }
 
+  getSession(){
+    const sessionString = localStorage.getItem("userSession");
+    const userToken = JSON.parse(sessionString!);
+
+    return userToken;
+  }
+
+  deleteSession(){
+    localStorage.removeItem("userSession");
+  }
+
 
 }
