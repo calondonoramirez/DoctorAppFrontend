@@ -30,7 +30,14 @@ export class SpecialityModalComponent implements OnInit {
       specialityName: ['', Validators.required],
       description: ['', Validators.required],
       state: ['1', Validators.required],
-    });    
+    });  
+    
+    
+    if(this.specialityData != null){
+      this.title = "Edit";
+      this.buttonName = "Update"
+    }
+
   }
   
   ngOnInit(): void {
@@ -78,14 +85,15 @@ export class SpecialityModalComponent implements OnInit {
       this._specialityService.update(speciality).subscribe({
         next: (data) => {
           if(data.success){
-            this._sharedService.showAlert('La especialidad ha sido actualizada con Exito!', 'Complete');            
+            this._sharedService.showAlert('La especialidad ha sido actualizada con Exito!', 'Complete'); 
+            this.modal.close("true");           
           }
           else{
             this._sharedService.showAlert('No se pudo actualizar la especialidad', 'Error');
           }
         },
         error: (e) => {
-          this._sharedService.showAlert('Error al crear la especialidad. \r\n'+ e.error.errores, 'Error');
+          this._sharedService.showAlert('Error al actualizar la especialidad. \r\n'+ e.error.errores, 'Error');
         }
       });
     }
