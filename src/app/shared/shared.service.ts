@@ -9,7 +9,7 @@ export class SharedService {
 
   constructor(private _snackbar: MatSnackBar) { }
 
-  showAlerta(mensaje: string, tipo: string){
+  showAlert(mensaje: string, tipo: string){
     this._snackbar.open(mensaje, tipo, {
       horizontalPosition: "end",
       verticalPosition: "top",

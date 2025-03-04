@@ -44,7 +44,7 @@ export class LoginComponent {
               this.showLoading = false;
             },
             error: (error) => {
-              this.sharedService.showAlerta(error.error, 'Error!');
+              this.sharedService.showAlert(error.error, 'Error!');
               this.showLoading = false;
             }
 
