@@ -19,6 +19,10 @@ export class SpecialityService {
     return this.http.get<ApiResponse>(`${this.baseuRL}`);
   }
 
+  activesList() : Observable<ApiResponse>{
+    return this.http.get<ApiResponse>(`${this.baseuRL}ActivesList`);
+  }
+
   create(request: Speciality) : Observable<ApiResponse>{
     return this.http.post<ApiResponse>(`${this.baseuRL}`, request);
   }

@@ -78,7 +78,7 @@ export class SpecialityListComponent implements OnInit, AfterViewInit {
             }
           },
           error: (e) => {
-            this._specialityShare.showAlert('Error al eliminar la especialidad. \r\n'+ e.message, 'Error');
+            this._specialityShare.showAlert(e.error.message, "Error!");
           }
         });
       }
@@ -97,17 +97,14 @@ export class SpecialityListComponent implements OnInit, AfterViewInit {
         }
         else
         {
-          this._specialityShare.showAlert(
-            'No se encontraron datos',
-            'Advertencia!'
-          );
+          this._specialityShare.showAlert('No se encontraron datos', 'Advertencia!');
         }      
       },
-      error: (e) => {}  
+      error: (e) => {
+        this._specialityShare.showAlert(e.error.message, "Error!");
+      }  
     });
   }
-
-
 
 
   applyFilterList(event: Event){

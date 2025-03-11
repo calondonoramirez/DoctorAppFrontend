@@ -75,7 +75,7 @@ export class SpecialityModalComponent implements OnInit {
           }
         },
         error: (e) => {
-          this._sharedService.showAlert('Error al crear la especialidad. \r\n'+ e.error.errores, 'Error');
+          this._sharedService.showAlert('Error al crear la especialidad. \r\n'+ e.error.message, 'Error');
         }
       });
 
@@ -93,7 +93,7 @@ export class SpecialityModalComponent implements OnInit {
           }
         },
         error: (e) => {
-          this._sharedService.showAlert('Error al actualizar la especialidad. \r\n'+ e.error.errores, 'Error');
+          this._sharedService.showAlert('Error al actualizar la especialidad. \r\n'+ e.error.message, 'Error');
         }
       });
     }

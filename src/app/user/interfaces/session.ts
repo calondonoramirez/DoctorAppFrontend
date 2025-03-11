@@ -1,4 +1,4 @@
 export interface Session {
-    username: string,    
+    userName: string,    
     token: string
 }
