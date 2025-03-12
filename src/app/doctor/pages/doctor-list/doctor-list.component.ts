@@ -60,7 +60,7 @@ export class DoctorListComponent implements OnInit, AfterViewInit {
         .open(ModalDoctorComponent, {disableClose:true, width: '600px'})
         .afterClosed()
         .subscribe((result) => {
-          if(result.success){
+          if(result === 'true'){
             this.GetDoctors();
           }
         })

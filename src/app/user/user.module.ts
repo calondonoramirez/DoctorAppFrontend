@@ -5,11 +5,15 @@ import { SharedModule } from '../shared/shared.module';
 import { UserService } from './services/user.service';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from '../material/material.module';
+import { UserListComponent } from './pages/user-list/user-list.component';
+import { UserModalComponent } from './modals/user-modal/user-modal.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    UserListComponent,
+    UserModalComponent
   ],
   imports: [
     CommonModule,

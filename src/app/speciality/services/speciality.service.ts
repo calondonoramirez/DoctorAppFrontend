@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ApiResponse } from 'src/app/interfaces/api-response';
 import { environment } from 'src/environments/environment';
 import { Speciality } from '../interfaces/speciality';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class SpecialityService {
 
   baseuRL: string = environment.apiUrl + 'speciality/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   list() : Observable<ApiResponse>{
     return this.http.get<ApiResponse>(`${this.baseuRL}`);
